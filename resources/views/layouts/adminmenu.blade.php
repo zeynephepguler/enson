@@ -17,7 +17,7 @@
         <ul>
           <li><a href="#">incoder sıralama</a></li>
           <li><a href="#">preorder sıralama</a></li>
-          <li><a href="#">bişeyorder</a></li>
+          <li><a href="#">postorder</a></li>
           <li><a href="#">bigOnotasyonu</a></li>
            </ul>
       </li>
