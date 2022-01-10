@@ -9,7 +9,7 @@
   <body>
     <div >
     <ul >
-      <li><a href="#">Ana sayfa</a></li>
+      <li><a href="/admin">Ana sayfa</a></li>
       <li><a href="/adminbasvurular">Başvurular</a></li>
       <li><a href="#">Onaylanan Başvurular</a></li>
       <li><a href="#">Reddedilen Başvurular</a></li>

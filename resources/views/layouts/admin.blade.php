@@ -1,4 +1,5 @@
 @extends('layouts.admintema')
 @section('content')
-scfsdsdfdsf
+<center>
+  <label><h1>Anasayfaya Hoşgeldiniz</h1></label>
 @stop

@@ -1,5 +1,5 @@
 <div>
-<p><center> @2021 Tüm Hakları Saklıdır.. MZ </p>
+<p><center> @2021 Tüm Hakları Saklıdır.. MZB </p>
 </div>
 <style media="screen">
   f {
