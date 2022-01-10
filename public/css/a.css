@@ -1,0 +1,96 @@
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color:#f4511e;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {
+  background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.but{
+  padding: 50px
+}
+
+input {
+  height: 35px; width: 400px;
+  padding:8px 20px;
+  border: 1px solid #eee;
+  border-left: 3px solid;
+  border-left-color:salmon;
+  border-radius: 5px;
+  transition: border-color .8s ease-out;
+}
+
+input:focus{
+  outline:none;
+  border: 1px solid #eee;
+  border-left: 3px solid #3e8e41;
+}
+
+select {
+  height: 35px; width: 440px;
+  padding:8px 20px;
+  border: 1px solid #eee;
+  border-left: 3px solid;
+  border-left-color:salmon;
+  border-radius: 5px;
+  transition: border-color .8s ease-out;
+}
+
+select:focus{
+  outline:none;
+  border: 1px solid #eee;
+  border-left: 3px solid #3e8e41;
+}
+
+input[name="adres"]{
+  height: 100px; width: 400px;
+  padding:8px 20px;
+  border: 1px solid #eee;
+  border-left: 3px solid;
+  border-left-color:salmon;
+  border-radius: 5px;
+  transition: border-color .8s ease-out;
+}
+
+input[name="adres"]:focus{
+  outline:none;
+  border: 1px solid #eee;
+  border-left: 3px solid #3e8e41;
+}
+
+div.container{
+  padding-left: 200px;
+  margin-left:0px;
+}
+
+td.tab{
+  width: 100px;
+  height: 50px;
+  text-align: right;
+  background-color: #ffaa56;
+  color: white;
+}
+td.tab2{
+  width: 300px;
+  height: 50px;
+  text-align: left;
+  padding: 5px;
+  background-color: #ffaa56;
+  color: white;
+}

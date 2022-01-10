@@ -1,0 +1,25 @@
+ul {
+    position: inherit;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: hidden;
+    background-color: #27ae60;
+}
+li {
+    float: left;
+}
+li b {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li b:hover:not(.active) {
+    background-color: #111;
+}
+.active {
+    background-color: #f39c12;
+}

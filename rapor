@@ -1,0 +1,52 @@
+Öncelikle veri tabanımızı düzenliyoruz. Aslında mongodb ile çalışıcaktık ama
+yeterli bilgi birikimim olmadığı için önce mysql bağladım.Bu sayede veri tabanı
+ işlemlerini composer yapısını model dosya yapısını ve tablolama iişlemlerini
+ yavaş yavaş kavradıktan sonra prejenin solarına doğru yeterli bilgim olduğunda
+  mongodb nin veri tabanına geçeceğim.
+
+Mysql i bağlamak için env dosyasından birkaç düzenleme yapıyoruz ve bu iş tamam.
+Veri tabanımıza verdiğimiz isim env dosyasındakiyle aynı olmalı.
+Daha sonra bir composer ve bi migration tablosu oluşturuyoruz.Tablomuzu çekmek
+istediğimiz verilere göre düzenliyoruz. Ve en son olarak projemizi terminalden
+php artisan migrate komutuyla migreyt ediyoruz yani veri tabanına yazdırıyoruz.
+Tablomuz hazır şimdi ise verilerimizi almak için bir controllere ihitiyacımız var.
+Tablomuzu oluşturuken onu da oluşturmuştuk elbette .Controllerimize verilerimizi
+programdan alıp veri tabanına yazıcak bir fonksiyon geliştiriyoruz Alma fonksiyonu
+ adını verdiğimiz bu fonksiyonda yeni bir kişi nesnesi oluşturuyoruz new komutu ile 
+ birlikte.
+Fonksiyonumuzu oluşturuken bir adet değişkene ihitiyacımız var değişkeneri başına
+$işareti koyarak tanımlayabiliriz bu değişkenleri kullanmak için request kütüphanesinden
+yardım alıyoruz .En son olarak save() komutu ile birlikte kullanıcıdan alınan verileri
+ mysql tablomuza kaydediyoruz.
+Kayıt işlemleri tamam şimdi bilgileri alabiliceğimiz bir view dosyasına ihtiyacımız var
+.Kayitol isimli bir blade.php dosyası oluşturuyoruz buradaki blade yapısı laravelin dosyalama
+ yapısından geliyor.sayfamızın tasarımını alıcağımız verilere uygun olarak değiştiriyoruz
+  burada tabloya çekiceğimiz değişkenlerin ismi ile kayıt ekranındaki inputların isim
+  değişkenlerinin aynı olması gerekiyor. Bir de yapıda bir form tag ı açmamız lazım methoduna
+   post action kısmına web.php de yazıcak olduğumuz controller fonksiyonunun adını route
+   şeklinde yazıyoruz.Butona tıklayınca verilerimiz kayıt olucak .Tabiki verileri almak
+    için@csrf metodunu inputların başına yazmayı unutmayalım.Son sayfaya gizli bir csrf
+    tokeni ekliyoruz ve butona basınca işlem tamam.
+Sıra geldi routelerimizi oluşturmaya .Wep.php mizin içine önce view dosyamıza gidebilmek
+için get methodu ile kayitol.blade.php dosyamıza yönlendiriyoruz.Daha sonra post methodu
+ kullanarak controllerimizde oluşturduğumuz alma fonksiyonunun kayitol sayfasında çalışması
+  için gerekli kodları yazıyoruz ve route işlemimiz tamam.
+Peki Kayıt olduktan sonra ne olacak ? Kullanıcıların numarası ve şifresi ile giriş yapmasını
+ istiyorum ben bu yüzden veri tabanından kullanıcının bu bilgisini alıp kontrol edebileceğim
+ bir fonksiyon yazmma gerek.
+Yine controller dosyama geliyorum ve kotrol isimli bir fonksiyon tanımlıyorum Öncelikler validate
+ kütüphanesi yardımıyla veri tabanımdan verilerimi alıyorum .Daha sonra girilen ilk input yani
+  öğrencinin numarası veri tabanına kayıtlı mı where komutu ile ona bakıyorum.Kayıtlı ise girilen
+   şifre değişkenini girilen değer ile karşılartırıp uygulamamıza giriş yaptırıyoruz. Daha sonra
+   kullanıcı verilerine ulaşabilmek için öğrencinin id sini session komutu ile bir değişkene atıyorum.
+    Bu sayede Kullanıcıma daha sonra ulaşabileceğim. Burada session kullanıcıdan verileri almak için
+     validation kontrol için kullanılıyor.
+Öğrenci giriş yaptığında kendi bilgilerine ulaşabilsin istiyorum .Bu yüzden controllere bilgiler adı
+ altında bir fonksiyon daha tanımlıyorum. Bu fonksiyon bir önceki fonksiyonda alınan kullanıcı id si
+ ila birlikte çalışacak. Önce uygun kullanıcıyıyı yine where komutu ile Buluyorum bunları da bir değişkene
+ atıyorum en son return komutu olarak view yolunu ve gidecek veri değişkenini belirtiyorum ve işlem tamam
+  artık kullanıcı id sine isteiğimiz viev dosyasından ulaşabileceğiz.
+Gelelim öğrencinin anasayfasına öncelikle oluşturmak istediğimiz tasarımımızı oluşturuyoruz .Daha sonra
+verilerimize {{‘$kullanıcının idsinin olduğu değişken adı’[‘ulaşmak istediğimiz değişkenin tablodaki adı’]}}
+ şeklinde ulaşıyoruz. En son web.php dosyasında gerekli route lerimizi oluşturuyoruz post ve get metodlarımızı
+  düzenliyoruz.

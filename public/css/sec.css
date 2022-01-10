@@ -1,0 +1,50 @@
+.bsvr {
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    background-color: #666666;
+    box-shadow: 0 5px 5px #313131, 0 9px 0 #393939, 0px 9px 10px rgba(0,0,0,0.4), inset 0px 2px 9px rgba(255,255,255,0.2), inset 0 -2px 9px rgba(0,0,0,0.2);
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    display: inline-block;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.2);
+    margin-bottom: 40px;
+    margin-right:10px;
+    border-radius: 35px 5px;
+    width: 170px;
+}
+
+.bsvr:active {
+    top: 7px;
+    box-shadow: 0 2px 0 #393939, 0px 4px 4px rgba(0,0,0,0.4), inset 0px 2px 5px rgba(0,0,0,0.2);
+}
+
+.renk {
+    background-color: #7fc345;
+    box-shadow: 0 5px 5px #508530, 0 9px 0 #385e25, 0px 9px 10px rgba(0,0,0,0.4), inset 0px 2px 9px rgba(255,255,255,0.2), inset 0 -2px 9px rgba(0,0,0,0.2);
+}
+
+.renk:hover {
+    box-shadow: 0 5px 5px #508530, 0 9px 0 #385e25, 0px 9px 10px rgba(0,0,0,0.4), inset 0px 2px 15px rgba(255,255,255,0.4), inset 0 -2px 9px rgba(0,0,0,0.2);
+}
+
+.renk:active {
+    box-shadow: 0 2px 0 #385e25, 0px 4px 4px rgba(0,0,0,0.4), inset 0px 2px 5px rgba(0,0,0,0.2);
+}
+
+input{
+  width: 300px;
+  height: 20px;
+}
+
+.d2{
+  padding-left: 250px;
+  text-align: left;
+}
+
+div label{
+  width: 200px;
+  display: inline-block;
+
+}
