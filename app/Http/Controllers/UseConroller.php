@@ -94,9 +94,7 @@ class UseConroller extends Controller
 
 
 public function goster(){
-  $data= basvuru::whereNotNull('intibak')->get();
-
-
+  $data= basvuru::whereNotNull('cap')->get();
 
         $bilgiler = $this->database->getReference("basvurular/cap")->getvalue();
 
@@ -107,7 +105,7 @@ public function admindgs(){
 $data= basvuru::whereNotNull('dikeygecis')->get();
 
   $bilgiler = $this->database->getReference("basvurular/dikeygecis")->getvalue();
-  return view('layouts.adminbasvurucap',['basvurus'=>$data],compact('bilgiler'));
+  return view('layouts.adminbasvurudgs',['basvurus'=>$data],compact('bilgiler'));
 
 }
 public function adminintibak(){
