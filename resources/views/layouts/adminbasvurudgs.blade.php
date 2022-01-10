@@ -10,6 +10,9 @@
 <input type="button" class="bsvr renk" onclick="location='adminbasvuruintibak'" value="İntibak Başvurusu">
 <input type="button" class="bsvr renk" onclick="location='adminbasvuruyazokulu'" value="Yaz Okulu Başvurusu">
 </div>
+@isset($bilgiler)
+
+
 <table border="1">
   <tr>
       <td>ogrencino</td>
@@ -25,7 +28,7 @@
     <td>{{$basvuru['ogrencino']}}</td>
     <td><a href="uploads/dilekce/{{$basvuru['dilekce']}}">indir</a></td>
     <td>{{$item['basvurudurumu']}}</td>
-    <td><a href="{{url('onaylandidgs/'.$key)}}"><button type="submit" class="btn btn-block btn-primary" name="button" >Onayla</button></a></td>
+    <td><a href="{{url('onaylandi/'.$key)}}"><button type="submit" class="btn btn-block btn-primary" name="button" >Onayla</button></a></td>
     <td><a href="{{url('reddedildi/'.$key)}}"><button type="submit" class="btn btn-block btn-primary" name="button" >Reddet</button></a></td>
 
   </tr>
@@ -34,5 +37,5 @@
 @endforelse
 @endforeach
 </table>
-
+@endisset
 @stop

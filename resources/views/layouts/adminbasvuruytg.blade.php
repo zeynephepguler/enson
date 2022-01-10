@@ -10,6 +10,7 @@
 <input type="button" class="bsvr renk" onclick="location='adminbasvuruintibak'" value="İntibak Başvurusu">
 <input type="button" class="bsvr renk" onclick="location='adminbasvuruyazokulu'" value="Yaz Okulu Başvurusu">
 </div>
+@isset($bilgiler)
 <table border="1">
   <tr>
       <td>ogrencino</td>
@@ -34,5 +35,5 @@
 @endforelse
 @endforeach
 </table>
-
+@endisset
 @stop
