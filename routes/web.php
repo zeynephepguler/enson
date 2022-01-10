@@ -136,14 +136,50 @@ Route::get('/basvuruyazokulu',[UseConroller::class, 'yazokulu']);
 Route::get('adminbasvurucap',[UseConroller::class, 'goster']);
 Route::get('adminbasvurudgs',[UseConroller::class, 'admindgs']);
 Route::get('adminbasvuruintibak',[UseConroller::class, 'adminintibak']);
-
 Route::get('adminbasvuruintibak',[UseConroller::class, 'adminintibak']);
 Route::get('adminbasvuruytg',[UseConroller::class, 'adminytg']);
 Route::get('adminbasvuruyazokulu',[UseConroller::class, 'adminyazokulu']);
 Route::get('onaylandi/{id}',[UseConroller::class, 'belgeonay']);
+
+Route::view('basvurularim','layouts.basvurularim');
+Route::get('basvurularim',[UseConroller::class, 'bilgilerim']);
 Route::get('basvurularim/{id}',[UseConroller::class, 'basvurularim']);
-Route::get('onaylandidgs/{id}',[UseConroller::class, 'belgeonaydgs']);
+
+Route::get('onaylandi/{id}',[UseConroller::class, 'belgeonaydgs']);
 Route::get('reddedildi/{id}',[UseConroller::class, 'belgered']);
+
+Route::view('basvurularimyty','layouts.basvurularimyty');
+Route::get('basvurularimyty',[UseConroller::class, 'bilgilerimyty']);
+Route::get('basvurularimyty/{id}',[UseConroller::class, 'basvurularimyty']);
+
+Route::view('basvurularimyaz','layouts.basvurularimyaz');
+Route::get('basvurularimyaz',[UseConroller::class, 'bilgilerimyazokulu']);
+Route::get('basvurularimyaz/{id}',[UseConroller::class, 'basvurularimyazokulu']);
+
+Route::view('basvurularimdikey','layouts.basvurularimdikey');
+Route::get('basvurularimdikey',[UseConroller::class, 'bilgilerimdikey']);
+Route::get('basvurularimdikey/{id}',[UseConroller::class, 'basvurularimdikey']);
+
+Route::view('basvurularimintibak','layouts.basvurularimintibak');
+Route::get('basvurularimintibak',[UseConroller::class, 'bilgilerimintibak']);
+Route::get('basvurularimintibak/{id}',[UseConroller::class, 'basvurularimintibak']);
+
+Route::get('onaylandi/{id}',[UseConroller::class, 'belgeonayintibak']);
+
+
+
+Route::get('onaylandi/{id}',[UseConroller::class, 'belgeonayyataygeciz']);
+Route::get('onaylandi/{id}',[UseConroller::class, 'belgeonayyazokulu']);
+Route::get('onaylandi/{id}',[UseConroller::class, 'belgeonaydgs']);
+Route::get('basvurularim/{id}',[UseConroller::class, 'basvurularim']);
+Route::get('onaylandi/{id}',[UseConroller::class, 'belgeonaydgs']);
+Route::get('reddedildi/{id}',[UseConroller::class, 'belgered']);
+Route::get('reddedildi/{id}',[UseConroller::class, 'belgeredintibak']);
+Route::get('reddedildi/{id}',[UseConroller::class, 'belgeredyataygecis']);
+Route::get('reddedildi/{id}',[UseConroller::class, 'belgeredyazokulu']);
+Route::get('reddedildi/{id}',[UseConroller::class, 'belgereddgs']);
 Route::get('basvurularim',[UseConroller::class, 'bilgilerim']);
 Route::get('basvurularim',[UseConroller::class, 'bilgilerimyty']);
 Route::get('basvurularim/{id}',[UseConroller::class, 'basvurularimyty']);
+Route::get('basvurularim',[UseConroller::class, 'bilgilerimyazokulu']);
+Route::get('basvurularim/{id}',[UseConroller::class, 'basvurularimyazokulu']);

@@ -11,22 +11,28 @@
 <input type="button" class="bsvr renk" onclick="location='adminbasvuruyazokulu'" value="Yaz Okulu Başvurusu">
 </div>
 <table border="1">
-    <tr>
-        <td>ogrencino</td>
-        <td>dilekce</td>
-        <td>Başvuru Durumu</td>
-    </tr>
-  @foreach ($basvurus as $basvuru)
-    <tr>
-      <td>{{$basvuru['ogrencino']}}</td>
-      <td><a href="uploads/dilekce/{{$basvuru['dilekce']}}">indir</a></td>
-      <td>{{$basvuru['yazokulu']}}</td>
+  <tr>
+      <td>ogrencino</td>
+      <td>dilekce</td>
+      <td>Başvuru Durumu</td>
+      <td>Onayla</td>
+      <td>Reddet</td>
+  </tr>
+  @forelse($bilgiler as $key => $item)
+@foreach ($basvurus as $basvuru)
 
-    </tr>
+  <tr>
+    <td>{{$basvuru['ogrencino']}}</td>
+    <td><a href="uploads/dilekce/{{$basvuru['dilekce']}}">indir</a></td>
+    <td>{{$item['basvurudurumu']}}</td>
+    <td><a href="{{url('onaylandi/'.$key)}}"><button type="submit" class="btn btn-block btn-primary" name="button" >Onayla</button></a></td>
+    <td><a href="{{url('reddedildi/'.$key)}}"><button type="submit" class="btn btn-block btn-primary" name="button" >Reddet</button></a></td>
 
+  </tr>
+@empty
 
-
-  @endforeach
+@endforelse
+@endforeach
 </table>
 
 @stop

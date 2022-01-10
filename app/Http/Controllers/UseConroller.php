@@ -27,13 +27,7 @@ class UseConroller extends Controller
         $ref=$this->database->getReference("basvurular/cap/$id")->getvalue();
         $ref =$this->database->getReference("basvurular");
 
-
-
-              $bilgiler = $this->database->getReference("basvurular/cap/$id")->getvalue();
-
-              return view('layouts.basvurularim',['basvurus'=>$data],compact('bilgiler'));
-
-      }
+            }
       public function bilgilerim()
 
       {
@@ -55,10 +49,58 @@ class UseConroller extends Controller
         $data= basvuru::whereNotNull('yataygecis')->get();
         $bilgileryty = $this->database->getReference("basvurular/yataygecis")->getvalue();
 
-        return view('layouts.basvurularim',['basvurus'=>$data],compact('bilgileryty'));
+        return view('layouts.basvurularimyty',['basvurus'=>$data],compact('bilgileryty'));
+
+      }
+      public function basvurularimyazokulu($id)
+      {
+        $ref=$this->database->getReference("basvurular/yazokulu/$id")->getvalue();
+        $ref =$this->database->getReference("basvurular");
+
+
+      }
+      public function bilgilerimyazokulu()
+
+      {
+        $data= basvuru::whereNotNull('yazokulu')->get();
+        $bilgileryaz = $this->database->getReference("basvurular/yazokulu")->getvalue();
+
+        return view('layouts.basvurularimyaz',['basvurus'=>$data],compact('bilgileryaz'));
+
+      }
+      public function basvurularimdikey($id)
+      {
+        $ref=$this->database->getReference("basvurular/dikeygecis/$id")->getvalue();
+        $ref =$this->database->getReference("basvurular");
+
+
+      }
+      public function bilgilerimdikey()
+
+      {
+        $data= basvuru::whereNotNull('dikeygecis')->get();
+        $bilgilerdikey = $this->database->getReference("basvurular/dikeygecis")->getvalue();
+
+        return view('layouts.basvurularimdikey',['basvurus'=>$data],compact('bilgilerdikey'));
 
       }
 
+      public function basvurularimintibak($id)
+      {
+        $ref=$this->database->getReference("basvurular/intibak/$id")->getvalue();
+        $ref =$this->database->getReference("basvurular");
+
+
+      }
+      public function bilgilerimintibak()
+
+      {
+        $data= basvuru::whereNotNull('intibak')->get();
+        $bilgilerintibak = $this->database->getReference("basvurular/intibak")->getvalue();
+
+        return view('layouts.basvurularimintibak',['basvurus'=>$data],compact('bilgilerintibak'));
+
+      }
   public function ogrencigiris()
   {
     return view('layouts.ogrencigiris');
@@ -83,14 +125,7 @@ class UseConroller extends Controller
     return view('layouts.redekran');
   }
 
-  public function belgeonaydgs($id)
-  {
-    $ref=$this->database->getReference("basvurular/dikeygecis/$id")->getvalue();
-    $ref =$this->database->getReference("basvurular")
-    ->update(["dikeygecis/$id/basvurudurumu"=>"basvuru onaylandı"]);
 
-    return view('layouts.onayekran');
-  }
 
 
 public function goster(){
@@ -111,20 +146,20 @@ $data= basvuru::whereNotNull('dikeygecis')->get();
 public function adminintibak(){
 $data= basvuru::whereNotNull('intibak')->get();
 
-$bilgiler = $this->database->getReference("basvurular/dikeygecis")->getvalue();
-return view('layouts.adminbasvurucap',['basvurus'=>$data],compact('bilgiler'));
+$bilgiler = $this->database->getReference("basvurular/intibak")->getvalue();
+return view('layouts.adminbasvuruintibak',['basvurus'=>$data],compact('bilgiler'));
 
 }
 public function adminytg(){
 $data= basvuru::whereNotNull('yataygecis')->get();
-
-return view('layouts.adminbasvuruytg',['basvurus'=>$data],);
+$bilgiler = $this->database->getReference("basvurular/yataygecis")->getvalue();
+return view('layouts.adminbasvuruytg',['basvurus'=>$data],compact('bilgiler'));
 
 }
 public function adminyazokulu(){
 $data= basvuru::whereNotNull('yazokulu')->get();
-
-return view('layouts.adminbasvuruyazokulu',['basvurus'=>$data],);
+$bilgiler = $this->database->getReference("basvurular/yazokulu")->getvalue();
+return view('layouts.adminbasvuruyazokulu',['basvurus'=>$data],compact('bilgiler'));
 
 }
 
@@ -402,6 +437,77 @@ return view('layouts.adminbasvuruyazokulu',['basvurus'=>$data],);
    return view('layouts.basvuruytg', $data);
   }
 
+  public function belgeonayintibak($id)
+    {
+      $ref=$this->database->getReference("basvurular/intibak/$id")->getvalue();
+      $ref =$this->database->getReference("basvurular")
+      ->update(["intibak/$id/basvurudurumu"=>"basvuru onaylandı"]);
+
+        return view('layouts.onayekran');
+    }
+
+    public function belgeredintibak($id)
+    {
+      $ref=$this->database->getReference("basvurular/intibak/$id")->getvalue();
+      $ref =$this->database->getReference("basvurular")
+      ->update(["intibak/$id/basvurudurumu"=>"basvuru reddedildi"]);
+
+      return view('layouts.redekran');
+    }
+
+    public function belgeonayyataygeciz($id)
+    {
+      $ref=$this->database->getReference("basvurular/yataygecis/$id")->getvalue();
+      $ref =$this->database->getReference("basvurular")
+      ->update(["yataygecis/$id/basvurudurumu"=>"basvuru onaylandı"]);
+
+        return view('layouts.onayekran');
+    }
+
+    public function belgeredyataygecis($id)
+    {
+      $ref=$this->database->getReference("basvurular/yataygecis/$id")->getvalue();
+      $ref =$this->database->getReference("basvurular")
+      ->update(["yataygecis/$id/basvurudurumu"=>"basvuru reddedildi"]);
+
+      return view('layouts.redekran');
+    }
+
+    public function belgeonayyazokulu($id)
+    {
+      $ref=$this->database->getReference("basvurular/yazokulu/$id")->getvalue();
+      $ref =$this->database->getReference("basvurular")
+      ->update(["yazokulu/$id/basvurudurumu"=>"basvuru onaylandı"]);
+
+        return view('layouts.onayekran');
+    }
+
+    public function belgeredyazokulu($id)
+    {
+      $ref=$this->database->getReference("basvurular/yazokulu/$id")->getvalue();
+      $ref =$this->database->getReference("basvurular")
+      ->update(["yazokulu/$id/basvurudurumu"=>"basvuru reddedildi"]);
+
+      return view('layouts.redekran');
+    }
+
+    public function belgeonaydgs($id)
+    {
+      $ref=$this->database->getReference("basvurular/dikeygecis/$id")->getvalue();
+      $ref =$this->database->getReference("basvurular")
+      ->update(["dikeygecis/$id/basvurudurumu"=>"basvuru onaylandı"]);
+
+      return view('layouts.onayekran');
+    }
+
+    public function belgereddgs($id)
+    {
+      $ref=$this->database->getReference("basvurular/dikeygecis/$id")->getvalue();
+      $ref =$this->database->getReference("basvurular")
+      ->update(["dikeygecis/$id/basvurudurumu"=>"basvuru reddedildi"]);
+
+      return view('layouts.redekran');
+    }
 
 
 

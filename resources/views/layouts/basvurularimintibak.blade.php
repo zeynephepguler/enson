@@ -11,7 +11,7 @@
   <input type="button" class="bsvr renk" onclick="location='basvurularimyaz'" value="Yaz Okulu Başvurusu">
   </div>
   <div class="">
-@isset($bilgiler)
+@isset($bilgilerintibak)
   <div class="">
   </table>
 
@@ -20,7 +20,7 @@
     <td>ogrencino</td>
     <td>Başvuru Durumu</td>
   </tr>
-  @forelse($bilgiler as $key => $item)
+  @forelse($bilgilerintibak as $key => $item)
   @foreach ($basvurus as $basvuru)
   <tr>
   <td>{{$basvuru['ogrencino']}}</td>
@@ -30,8 +30,6 @@
 
   @endforelse
   @endforeach
-
-
-</div>
+  </table>
 @endisset
 @stop
